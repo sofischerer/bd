@@ -4,7 +4,9 @@
 
 typedef struct DF{
     char* direita;
+    int n_dir;
     char* esquerda;
+    int n_esq;
 } DF;
 
 int main(int argc, char *argv[]){
@@ -26,11 +28,24 @@ int main(int argc, char *argv[]){
 
     //Leia. O arquivo.
     int cont = 0;
+
+    //Cria o universo, assumindo que a entrada sempre vá ser no formato U = {A,B,C,D,E}
+    in = fgetc(arquivo);
+    in = fgetc(arquivo);
+    in = fgetc(arquivo);
+    in = fgetc(arquivo);
+    in = fgetc(arquivo);
+
     do{
         in = fgetc(arquivo);
-        if((in != ',') || (in != ';') || (in != '{') || (in != '}')) atributos[cont++] = in;
+        if((in != ',') || (in != ';') || (in != '}')) atributos[cont++] = in;
     }while (in != '}');
 
+    //Pega as DF
+    do{
+        in = fgetc(arquivo);
+
+    }
     in = fgetc(arquivo);
 
 
